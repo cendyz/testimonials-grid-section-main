@@ -4,6 +4,7 @@
 body {
 	display: flex;
 	justify-content: center;
+	align-items: center;
 	font-family: 'Barlow Semi Condensed', serif;
 	font-size: 1.3rem;
 	background-color: $light-grayish-blue;
@@ -13,5 +14,11 @@ body {
 	padding: 1.7em;
 	width: 100%;
 	max-width: 375px;
+}
+
+@media (min-width: 992px) {
+	#root {
+		max-width: 1230px;
+	}
 }
 

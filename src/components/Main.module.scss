@@ -1,13 +1,16 @@
 @use '../sass/utilities/index' as *;
 
-.main {
+.main,
+.section {
 	display: grid;
+}
+
+.main {
 	row-gap: 2em;
 }
 
 .section {
 	position: relative;
-	display: grid;
 	row-gap: 1.6em;
 	padding: 2em;
 	background-color: $moderate-violet;
@@ -90,6 +93,47 @@
 		.graduate,
 		.desc {
 			opacity: 0.8;
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.main {
+		grid-template-columns: repeat(4, auto);
+		column-gap: 2.2em;
+		grid-template-rows: auto auto;
+		grid-template-areas:
+			'one one two five'
+			'three four four five';
+	}
+
+	.section {
+		grid-area: one;
+		&:nth-child(2) {
+			grid-area: two;
+		}
+		&:nth-child(3) {
+			grid-area: three;
+		}
+		&:nth-child(4) {
+			grid-area: four;
+		}
+		&:nth-child(5) {
+			grid-area: five;
+		}
+
+		&:nth-child(2),
+		&:nth-child(3),
+		&:nth-child(5) {
+			max-width: 20.8em;
+		}
+
+		.text {
+			font-size: 2.3rem;
+		}
+
+		.desc {
+			font-size: 1.48rem;
 		}
 	}
 }
